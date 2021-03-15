@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  jupyter:
+    container_name: jupyter
+    build: jupyter/.docker
+    volumes:
+      - ./jupyter:/app/jupyter
+      - ./data:/app/data
+      - ~/.kaggle:/home/user/.kaggle:ro
+    ports:
+      - "9000:8888"
+    tty: true
+    working_dir: /app
+    env_file: 
+      - ./.env
