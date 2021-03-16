@@ -1,6 +1,6 @@
 .PHONY:	setup
 setup:
-	mkdir -p data
+	@mkdir -p data
 	@echo LOCAL_UID=$(shell id -u $(USER)) > .env
 	@echo LOCAL_GID=$(shell id -g $(USER)) >> .env
 
